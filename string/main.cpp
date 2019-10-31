@@ -30,23 +30,44 @@ void myStrCopy(char dest[], char source[])
         dest[i]=source[i];
 }
 
+void myStrStr(char source[], char word[])
+{
+    int j=0;
+    for(int i=0; i< strlen(source); i++)
+    {
+        if(source[i]==word[j])
+        {
+            newArr[j] = source[i];
+            j++;
+        }
+    }
+    myStrPrint(source + j);
+
+}
+
 int main()
 {
     myStrPrint(t);
 
     cout << endl;
+
     char t2[100];
     myStrCopy(t2, t);
     myStrPrint(t2);
     cout << myStrLen(t2);
+
     char t3[100];
+
     cout<<endl;
+
     strcpy(t3, "Limanowa to male miasto");
     myStrPrint(t3);
+
     cout<< endl;
-    cout<< (t3+9);
-    cout<< endl;
-    cout<< strstr(t3, "male");
+
+    cout<< (t3+9)<< endl;
+    cout<< strstr(t3, "male")<<endl;
+    myStrStr(t3, "male");
 
     return 0;
 }
