@@ -23,11 +23,25 @@ void usunPierwszy(element *&start){
     delete e;
 }
 
-void dodajNaKoniec(){
+void dodajNaKoniec(element *&start, element *e){
+    e->nastepny=NULL;
+    if(start==NULL){
+        start = e;
+        return;
+    }
 
+    element *ostatni = start;
+
+    while(ostatni->nastepny!=NULL){
+        ostatni=ostatni->nastepny;
+    }
+
+    ostatni -> nastepny = e;
 }
 
-void usunOstatni(){}
+void usunOstatni(){
+
+}
 
 void print(element *start)
 {
@@ -57,7 +71,11 @@ int main()
     *e = {3, NULL};
     dodajNaPoczatek(s,e);   // 3, 2, 1
 
-    usunPierwszy(s);        // 2, 1
+    e=new element;
+    *e = {2019, NULL};
+    dodajNaKoniec(s,e);     // 3, 2, 1, 2019
+
+    usunPierwszy(s);        // 2, 1, 2019
 
     print(s);
 
