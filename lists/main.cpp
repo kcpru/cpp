@@ -23,6 +23,12 @@ void usunPierwszy(element *&start){
     delete e;
 }
 
+void dodajNaKoniec(){
+
+}
+
+void usunOstatni(){}
+
 void print(element *start)
 {
     element *e =start;
@@ -41,17 +47,17 @@ int main()
 
     e=new element;
     *e = {1, NULL};
-    dodajNaPoczatek(s,e);
+    dodajNaPoczatek(s,e);   // 1
 
     e=new element;
     *e = {2, NULL};
-    dodajNaPoczatek(s,e);
+    dodajNaPoczatek(s,e);   // 2, 1
 
     e=new element;
     *e = {3, NULL};
-    dodajNaPoczatek(s,e);
+    dodajNaPoczatek(s,e);   // 3, 2, 1
 
-    usunPierwszy(s);
+    usunPierwszy(s);        // 2, 1
 
     print(s);
 
