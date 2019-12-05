@@ -16,7 +16,6 @@ void szukajZastap(string &s, string szukaj, string zastap)
     s.replace(index, 1, zastap);
 }
 
-
 int main()
 {
     string s1;
@@ -36,7 +35,6 @@ int main()
 
     szukajZastap(s1, "miasto", "metropolium");
     cout << s1 <<endl;
-
 
     return 0;
 }
