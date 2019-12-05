@@ -7,6 +7,12 @@ class Prostokat
 public:
     int a, b;
 
+    prostokat(int a, int _b){
+        this -> a=a; // ODNOSI SIÊ DO NAJBLI¯SZEJ ZMIENNEJ
+        b = _b;
+    }
+
+
     int pole()
     {
         return a * b;
@@ -45,13 +51,9 @@ public:
 
 int main()
 {
-    Prostokat p1;
-    Prostokat p2;
-    p1.a = 5;
-    p1.b = 7;
+    Prostokat p1(5, 10);
+    Prostokat p2(5, 10);
 
-    p2.a = 3;
-    p2.b = 9;
 
     p1.info();
     p2.info();
