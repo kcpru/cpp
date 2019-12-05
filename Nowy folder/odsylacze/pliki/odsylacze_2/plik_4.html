@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plik 4</title>
+    <link rel="icon" href="../../grafiki/icon.png">
+</head>
+
+<body>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 17px;
+            color: #3d3d3d;
+            margin: 50px;
+        }
+
+        header {
+            font-size: 23px;
+            text-decoration: none;
+            color: #0084ff;
+            text-align: center;
+            margin: 30px auto;
+        }
+
+        #line {
+            height: 10px;
+            margin: 10px;
+            border-bottom: 2px solid #3d3d3d;
+        }
+
+        a {
+            margin-right: 10px;
+            margin-left: 10px;
+            text-decoration: none;
+            text-decoration-style: none;
+            color: #0084ff;
+        }
+
+        a:hover {
+            color: #0054a3;
+        }
+
+        a:active {
+            color: #339cff;
+        }
+
+        img {
+            margin: auto;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+
+    <header>
+        <div id="menu">
+            <div id="line"></div>
+            <h2>Plik 4</h2>
+            <a href="../../index.html" title="index">Index</a>
+            <a href="../odsylacze_1/plik_1.html" title="plik_1">Plik_1</a>
+            <a href="../odsylacze_1/plik_2.html" title="plik_2">Plik_2</a>
+            <a href="./plik_3.html" title="plik_3">Plik_3</a>
+            <a href="./plik_4.html" title="plik_4">Plik_4</a>
+            <a href="../odsylacze_mapa/plik_mapa.html" title="plik_mapa">Mapa</a>
+            <div id="line"></div>
+        </div>
+    </header>
+
+    <main>
+        <img src="../../grafiki/mapa_odsylaczy.jpg" usemap="#mapaodsylaczy"></img>
+
+        <map id="mapaodsylaczy" name="mapaodsylaczy">
+            <area alt="wojewodztwo" title="plik4" href="../odsylacze_2/plik_4.html"
+                coords="54,347,149,298,213,294,241,235,259,173,260,100,220,124,98,157,71,224,54,277" shape="poly">
+            <area alt="wojewodztwo" title="plik1" href="../odsylacze_1/plik_1.html"
+                coords="210,323,259,299,281,257,303,256,311,335,321,385,406,426,457,448,375,579,316,533,279,537,242,497,196,463,185,377"
+                shape="poly">
+            <area alt="wojewodztwo" title="plik2" href="../odsylacze_1/plik_2.html"
+                coords="559,111,757,121,792,138,806,187,742,235,641,263,580,291,522,251,504,215,531,135" shape="poly">
+            <area alt="wojewodztwo" title="plik3" href="../odsylacze_2/plik_3.html"
+                coords="580,314,649,293,701,272,732,330,768,366,840,441,750,471,722,538,727,614,663,598,637,522,602,459,556,429,515,414,536,341"
+                shape="poly">
+            <area alt="wojewodztwo" title="indeks" href="../../index.html"
+                coords="583,732,605,776,650,769,683,763,682,827,696,879,616,884,568,904,532,854,504,794,529,751"
+                shape="poly">
+            <area alt="wojewodztwo" title="mapa" href="../odsylacze_mapa/plik_mapa.html"
+                coords="818,484,885,453,907,554,958,650,963,706,875,725,798,666,761,618,764,505" shape="poly">
+        </map>
+
+        <img src="../../grafiki/ksztalty.jpg" usemap="#mapalinkow"></img>
+
+        <map id="mapalinkow" name="mapalinkow">
+            <area alt="ksztalt" title="Google.com" href="https://google.com" coords="45,34,346,211" shape="rect">
+            <area alt="ksztalt" title="YouTube.com" href="https://youtube.com" coords="312,379,98" shape="circle">
+            <area alt="ksztalt" title="WirtualnaPolska.pl" href="https://wp.pl" coords="444,368,794,368,621,21" shape="poly">
+        </map>
+    </main>
+</body>
+
+</html>

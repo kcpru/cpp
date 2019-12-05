@@ -15,38 +15,45 @@ void dodajNaPoczatek(element *&start, element *e)
     start=e;
 }
 
-void usunPierwszy(element *&start){
-    if(start==NULL) return;
+void usunPierwszy(element *&start)
+{
+    if(start==NULL)
+        return;
     element *e;
     e=start;
     start= start->nastepny;
     delete e;
 }
 
-void dodajNaKoniec(element *&start, element *e){
+void dodajNaKoniec(element *&start, element *e)
+{
     e->nastepny=NULL;
-    if(start==NULL){
+    if(start==NULL)
+    {
         start = e;
         return;
     }
 
     element *ostatni = start;
 
-    while(ostatni->nastepny!=NULL){
+    while(ostatni->nastepny!=NULL)
+    {
         ostatni=ostatni->nastepny;
     }
 
     ostatni -> nastepny = e;
 }
 
-void usunOstatni(){
+void usunOstatni()
+{
 
 }
 
 void print(element *start)
 {
     element *e =start;
-    while(e!=NULL){
+    while(e!=NULL)
+    {
         cout << e->wartosc << " ";
         e = e-> nastepny;
     }

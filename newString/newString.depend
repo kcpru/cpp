@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1575533581 source:c:\users\2tiagr2\desktop\cpp\newstring\main.cpp
+	<iostream>
+	<string>
+	<bitset>
+

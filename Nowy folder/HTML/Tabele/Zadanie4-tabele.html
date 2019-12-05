@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie 4 - tabele</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        table {
+            margin: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <style>
+        .table4,
+        .table4 tr,
+        .table4 td {
+            padding: 10px;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+    </style>
+    <table class="table4">
+        <thead>A</thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td colspan="2"><b>Wydruki</b></td>
+                <td><b>Liczba stałych pracowników</b></td>
+                <td><b>Liczba zleceń</b></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><b>Planowanie</b></td>
+                <td><b>Rzeczywiste</b></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>Styczeń</b></td>
+                <td>1450</td>
+                <td>2343</td>
+                <td>200</td>
+                <td>150</td>
+            </tr>
+            <tr>
+                <td><b>Luty</b></td>
+                <td>2000</td>
+                <td>5000</td>
+                <td>345</td>
+                <td>190</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5"><b>Tabela opisujaca schemat wydatków</b></td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+    <table class="table4">
+        <thead>B</thead>
+        <tr>
+            <td colspan="2" rowspan="2">qqqqqqq</td>
+            <td rowspan="3">qqqqqqq</td>
+            <td colspan="2">qqqqqqq</td>
+        </tr>
+        <tr>
+            <td rowspan="2">qqqqqqq</td>
+            <td>qqqqqqq</td>
+        </tr>
+        <tr>
+            <td>qqqqqqq</td>
+            <td>qqqqqqq</td>
+            <td>qqqqqqq</td>
+        </tr>
+        <tr>
+            <td>qqqqqqq</td>
+            <td>qqqqqqq</td>
+            <td>qqqqqqq</td>
+            <td>qqqqqqq</td>
+            <td>qqqqqqq</td>
+        </tr>
+    </table>
+
+    <table class="table4">
+        <thead></thead>C</thead>
+        <tbody>
+            <tr>
+                <td>Pierwsza komórka pierwszej tabeli</td>
+                <td>Druga komórka pierszej tabeli</td>
+                <td>Trzecia komórka pierwszej tabeli</td>
+            </tr>
+            <tr>
+                <td>Czwarta komórka pierwszej tabeli</td>
+                <td>
+                    <table class="table4">
+                        <tr>
+                            <td>Pierwsza komórka drugiej tabeli</td>
+                            <td>Druga komórka drugiej tabeli</td>
+                        </tr>
+                        <tr>
+                            <td>Trzecia komórka drugiej tabeli</td>
+                            <td>Czwarta komórka drugiej tabeli</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>Szosta komórka pierwszej tabeli</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>
