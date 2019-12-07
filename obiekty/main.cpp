@@ -7,11 +7,11 @@ class Prostokat
 public:
     int a, b;
 
-    prostokat(int a, int _b){
-        this -> a=a; // ODNOSI SIÊ DO NAJBLI¯SZEJ ZMIENNEJ
+    Prostokat(int a, int _b)
+    {
+        this->a = a; // ODNOSI SIï¿½ DO NAJBLIï¿½SZEJ ZMIENNEJ
         b = _b;
     }
-
 
     int pole()
     {
@@ -19,14 +19,14 @@ public:
     }
     int obwod()
     {
-        return 2*(a+b);
+        return 2 * (a + b);
     }
 
     void info()
     {
 
-        cout << "Prostokat: a="<< a << ", b="<< b <<endl;
-        cout << "Pole: " << pole() <<endl;
+        cout << "Prostokat: a=" << a << ", b=" << b << endl;
+        cout << "Pole: " << pole() << endl;
     }
 };
 
@@ -44,8 +44,8 @@ public:
 
     void info()
     {
-        cout << "Kolo: r="<< r <<endl;
-        cout << "Pole: " << pole() <<endl;
+        cout << "Kolo: r=" << r << endl;
+        cout << "Pole: " << pole() << endl;
     }
 };
 
@@ -54,10 +54,8 @@ int main()
     Prostokat p1(5, 10);
     Prostokat p2(5, 10);
 
-
     p1.info();
     p2.info();
-
 
     Kolo k1;
     k1.r = 4;
