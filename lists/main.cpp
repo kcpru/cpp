@@ -44,9 +44,26 @@ void dodajNaKoniec(element *&start, element *e)
     ostatni -> nastepny = e;
 }
 
-void usunOstatni()
+void usunOstatni(element *&start)
 {
+    if(start==NULL) return;
 
+    if(start->nastepny==NULL)
+    {
+        delete start;
+        return;
+    }
+
+    element *e = start;
+    element *ep = start;
+
+    while(e->nastepny != NULL)
+    {
+        ep = e;
+        e = e -> nastepny;
+    }
+    ep->nastepny = NULL;
+    delete e;
 }
 
 void print(element *start)
@@ -83,7 +100,7 @@ int main()
     dodajNaKoniec(s,e);     // 3, 2, 1, 2019
 
     usunPierwszy(s);        // 2, 1, 2019
-
+    usunOstatni(s);
     print(s);
 
     return 0;
