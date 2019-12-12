@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1549880434 source:c:\users\admin\documents\bart³omiej_pacu³t\liczbypseudolosowe\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+
