@@ -16,13 +16,13 @@ public:
 
     void zwiekszGodziny(int oIleG)
     {
-        g = (g + oIleG)%24;
+        g = (g + oIleG) % 24;
     }
 
     void zwiekszMinuty(int oIleM)
     {
-        m = (m + oIleM)%60;
-        g = (g + ((m + oIleM) / 60))%24;
+        zwiekszGodziny((m + oIleM) / 60);
+        m = (m + oIleM) % 60;
     }
 
     void info()
@@ -35,8 +35,8 @@ public:
 
     void edytor()
     {
-        char co = 'm';
-        int oIle = 0;
+        char co;
+        int oIle;
 
         while(true)
         {
