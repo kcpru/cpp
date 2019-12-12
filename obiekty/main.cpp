@@ -32,20 +32,30 @@ public:
 
 class Kolo
 {
-    int PI = 3.14;
-
 public:
     int r;
+    const int PI;
+
+    Kolo(int _r):r(_r), PI(3.14)
+    {
+        // TYLKO TU MOZNA INICJALIZOWAC STALE
+        r=_r;
+    }
 
     int pole()
     {
         return r * r * PI;
     }
 
+    int obwod(){
+        return 2 * r * PI;
+    }
+
     void info()
     {
         cout << "Kolo: r=" << r << endl;
         cout << "Pole: " << pole() << endl;
+        cout << "Obwod: " << obwod() << endl;
     }
 };
 
