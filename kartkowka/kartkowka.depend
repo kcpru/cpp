@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1576138128 source:c:\users\2tiagr2\desktop\cpp\kartkowka\main.cpp
+	<iostream>
+	<bitset>
+	<string>
+
