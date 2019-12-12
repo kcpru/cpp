@@ -2,122 +2,85 @@
 
 using namespace std;
 
-/*
-Funkcja to fragment programu opatrzony nazwa ktory moe zostac wykonany poprzez wywolanie
-tej funkcji w kodzie
-*/
+//ZMIANA WARTOŒCI ZMIENNYCH PRZEKAZYWANYCH DO FUNKCJI JAKO PARAMETR
+//&
+//PRZEKAZYWANIE TABLIC DO FUNKCJI
 
-int suma (int a, int b)
+//wywołując te funkcję z argumentem będącym nazwa zmiennej np. b
+//wyobrażamy sobie że po wywołaniu zwieksz(b) zostanie wykonana operacja
+//zwieksz(int &a = b)
+//stworzona wiec zostanie zmienna a bêd¹ca inn¹ nazw¹ albo referencj¹ do
+//zmiennej b
+
+void zwieksz (int &a)
 {
-    int wynik = 0;
-    wynik = a + b;
-    return wynik;
+    a++;
 }
 
-int iloczyn (int a, int b)
+//w starym C nie ma referencji
+//aby w funkcji zmieniaæ wartoœæ zmiennej spoza funkcji nale¿y przekazaæ
+//do funkcji wskaŸnik do niej
+//funkcje nale¿y wywo³aæ z arugmentem bêd¹cym adresem do zmiennej.
+//wyobra¿amy sobie ¿e po wywo³aniu zwieksz(&a) zostanie wykonana operacja
+
+void zwieksz (int *w)
 {
-    int wynik = 0;
-
-    for(int i = 0; i < a; i++)
-        wynik += b;
-
-    return wynik;
+    (*w)++;
 }
 
-int potega (int a, int b)
+int a = 0;
+int b = 20;
+
+//nazwa tablicy w c++ jest wskaźnikiem do jej pierwszego elementu
+//należy więc zrobić parametr będącym wskaźnikiem do typu składowanego w tablicy
+//i podstawić do niego wskaźnik do jej pierwszego elementu
+
+//funkcję wywołujemy przykładowo tak: print(tab[0], 5)
+//i wyobrażamy sobie że po jej wywołaniu jest wykonywane
+//print(int *t = tab[0], int n = 5)
+//po takim podstawieniu, t stanie się wskaźnikiem do pierwszego elementu tablicy
+//i może być traktowany jak jej nazwa
+
+int tab[] = { 1, 2, 3, 4, 5};
+
+void print (int *t, int n)
 {
-    int wynik = 1;
-
-    for(int i = 0; i < b; i++)
-        wynik *= a;
-
-    return wynik;
-}
-
-int iloraz (int a, int b)
-{
-    int wynik = 0;
-
-    while(a >= b)
+    for(int i = 0; i < n; i++)
     {
-        wynik++;
-        a -= b;
-    }
-
-    return wynik;
-}
-
-void func ()
-{
-    cout << "Hello, World!" << endl;
-}
-
-void wyswietl (int *w, int rozmiar)
-{
-    for(int i = 0; i < rozmiar; i++)
-    {
-        cout << w[i] << (i != rozmiar - 1 ? ", " : "");
+        cout << t[i] << (i != n - 1 ? ", " : "");
     }
 
     cout << endl;
 }
 
-void sortowanie (int *tab, int rozmiar)
-{
-    for(int i = 0; i < rozmiar; i++)
-    {
-		for(int j = 1; j < rozmiar - i; j++)
-        {
-            if(tab[j - 1] > tab[j])
-            {
-                int tmp = tab[j - 1];
-                tab[j - 1] = tab[j];
-                tab[j] = tmp;
-            }
-        }
-    }
-}
+//nowszym sposobem jest deklaracja tablicy
+//w nieco inny sposób. wykorzystując, że deklaracje naśladują wyrażenia napiszemy
+//w nagłówku int t[]
+//rozumiemy przez to że typu int jest to co powstanie po zadziałaniu nawiasów na t
+//czyli np. t[1] jest typu int
+//z tego wynika że t jest wskaźnikiem do pierwszego elementu tablicy
+//jest to odpowiednik nagłówek
 
-int maximum (int *tab, int rozmiar)
+void newPrint (int t[], int n)
 {
-    int maxi = tab[0];
-
-    for(int i = 1; i < rozmiar; i++)
+    for(int i = 0; i < n; i++)
     {
-        if(tab[i] > maxi)
-            maxi = tab[i];
+        cout << t[i] << (i != n - 1 ? ", " : "");
     }
 
-    return maxi;
+    cout << endl;
 }
 
-int minimum (int *tab, int rozmiar)
+int main()
 {
-    int mini = tab[0];
+    zwieksz(b);
+    cout << b << endl;
 
-    for(int i = 1; i < rozmiar; i++)
-    {
-        if(tab[i] < mini)
-            mini = tab[i];
-    }
+    zwieksz(&a);
+    cout << a << endl;
 
-    return mini;
-}
-
-int main ()
-{
-    const int n = 5;
-    int tab[n] = { 5, 3, 1, 2, 4};
-
-    cout << "przed posortowaniem: ";
-    wyswietl(tab, n);
-
-    cout << "po sortowaniu: ";
-    sortowanie(tab, n);
-    wyswietl(tab, n);
-
-    cout << "maximum = " << maximum(tab, n) << endl;
-    cout << "minimum = " << minimum(tab, n) << endl;
+    print(&tab[0], 5);
+    newPrint(tab, 5);
 
     return 0;
 }
