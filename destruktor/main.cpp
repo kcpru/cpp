@@ -7,18 +7,19 @@ using namespace std;
 class Tablica
 {
 public:
-    int rozmiar;
+    int rozmiar = 0;
     int *t;
 
     Tablica(int rozmiar)
         : rozmiar(rozmiar)
     {
         t = new int[rozmiar];
+        cout << "Tablica utworzona" << endl << endl;
     }
 
     void losuj()
     {
-        srand(time(NULL));
+        srand(time(NULL)); // JESZCZE BARDZIEJ RANDOMOWO
 
         for(int i=0; i<rozmiar; i++)
             t[i] = rand() % 100;
@@ -60,7 +61,7 @@ public:
         return srednia;
     }
 
-    void sortuj()
+    void sortuj() // SORTOWANIE BABELKOWE
     {
         for(int i=0; i<rozmiar - 1; i++)
             for(int j=0; j<rozmiar - i - 1; j++)
@@ -72,7 +73,6 @@ public:
     {
         for(int i=0; i<rozmiar; i++)
             cout << t[i] << " ";
-
         cout << endl;
     }
 
@@ -80,12 +80,15 @@ public:
     ~Tablica()
     {
         delete[] t;
+        cout << endl << "Tablica usunieta" << endl;
     }
 };
 
 int main()
 {
     Tablica Tab(20);
+
+    Tab.wyswietl();
 
     Tab.losuj();
     Tab.wyswietl();
