@@ -60,6 +60,14 @@ public:
         return srednia;
     }
 
+    void sortuj()
+    {
+        for(int i=0; i<rozmiar - 1; i++)
+            for(int j=0; j<rozmiar - i - 1; j++)
+                if(t[j] > t[j+1])
+                    swap(t[j], t[j+1]);
+    }
+
     void wyswietl()
     {
         for(int i=0; i<rozmiar; i++)
@@ -85,6 +93,8 @@ int main()
     cout << "Min: " << Tab.mini() << endl;
     cout << "Suma: " << Tab.suma() << endl;
     cout << "Srednia: " << Tab.srednia() << endl;
+    Tab.sortuj();
+    Tab.wyswietl();
 
     return 0;
 }
