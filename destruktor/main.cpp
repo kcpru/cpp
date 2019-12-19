@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
 
 using namespace std;
 
@@ -17,6 +18,8 @@ public:
 
     void losuj()
     {
+        srand(time(NULL));
+
         for(int i=0; i<rozmiar; i++)
             t[i] = rand() % 100;
     }

@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1576743612 source:c:\users\2tiagr2\desktop\cpp\destruktor\main.cpp
+1576744050 source:c:\users\2tiagr2\desktop\cpp\destruktor\main.cpp
 	<iostream>
 	<cstdlib>
+	<time.h>
 
