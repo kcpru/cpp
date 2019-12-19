@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1576742295 source:c:\users\2tiagr2\desktop\cpp\destruktor\main.cpp
+	<iostream>
+	<cstdlib>
+
