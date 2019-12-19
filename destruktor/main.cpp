@@ -8,20 +8,29 @@ class Tablica
 public:
     int rozmiar;
     int *t;
-
-    Tablica(int rozmiar, int t[])
+    Tablica(int rozmiar)
         : rozmiar(rozmiar)
-        , t(t)
     {
         t = new int[rozmiar];
     }
 
-    int losuj()
+    void losuj()
     {
         for(int i=0; i<rozmiar; i++)
         {
             t[i] = rand() % 100;
         }
+    }
+
+    int maxi()
+    {
+        int maxi = t[0];
+
+        for(int i=0; i<rozmiar; i++){
+            if(t[i] > maxi) maxi = t[i];
+        }
+
+        return maxi;
     }
 
     void wyswietl()
@@ -45,11 +54,11 @@ public:
 int main()
 {
     cout << "Hello world!" << endl;
-    int t[10] = {};
-    Tablica Tab1(10, t);
+    Tablica Tab1(10);
 
     Tab1.losuj();
     Tab1.wyswietl();
+    cout << Tab1.maxi() << endl;
 
     return 0;
 }
