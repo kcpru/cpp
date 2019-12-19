@@ -69,6 +69,14 @@ public:
                     swap(t[j], t[j+1]);
     }
 
+    void zmienRozmiar(int nowyRozmiar)  // DO POPRAWY
+    {
+        int *newT;
+        newT = new int[nowyRozmiar];
+
+        //t = *newT;
+    }
+
     void wyswietl()
     {
         for(int i=0; i<rozmiar; i++)
@@ -86,9 +94,7 @@ public:
 
 int main()
 {
-    Tablica Tab(20);
-
-    Tab.wyswietl();
+    Tablica Tab(10);
 
     Tab.losuj();
     Tab.wyswietl();
@@ -98,6 +104,10 @@ int main()
     cout << "Srednia: " << Tab.srednia() << endl;
     Tab.sortuj();
     Tab.wyswietl();
+
+    // Tab.zmienRozmiar(20);
+
+    //  Tab.wyswietl();
 
     return 0;
 }
