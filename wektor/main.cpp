@@ -18,6 +18,7 @@ public:
         cout << "(" << x << ", " << y << ")" << endl;
     }
 
+    // operatorOP(argument)
     Wektor operator+(Wektor w)
     {
         Wektor tmp(this->x + w.x, this->y + w.y);
@@ -30,12 +31,22 @@ public:
         return tmp;
     }
 
-    Wektor operator*(int nb)
+    Wektor operator*(int num)
     {
-        Wektor tmp(this->x * nb, this->y * nb);
+        Wektor tmp(this->x * num, this->y * num);
+        return tmp;
+    }
+    Wektor operator/(int num)
+    {
+        Wektor tmp(this->x / num, this->y / num);
         return tmp;
     }
 };
+
+Wektor operator*(int num, Wektor w) {
+    Wektor tmp(w.x * num, w.y * num);
+    return tmp;
+}
 
 
 
@@ -55,9 +66,13 @@ int main()
     w4 = w2 - w3;
     w4.print();
 
-    Wektor w5(3,0);
-    w5 = w4 * 2;
+    Wektor w5(0,0);
+    w5 = w4 * 4;
     w5.print();
+
+    Wektor w6(0,0);
+    w6 = 3 * w1;
+    w6.print();
 
     return 0;
 }
