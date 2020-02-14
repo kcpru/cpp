@@ -65,6 +65,29 @@ Wektor operator*(int num, Wektor w)
     return wynik;
 }
 
+//
+class Liczba
+{
+public:
+    int wartosc;
+
+    Liczba(int wartosc)
+    {
+        this -> wartosc = wartosc;
+    }
+
+    Liczba operator++(void)
+    {
+        wartosc += 1;
+        return wartosc;
+    }
+
+    void info()
+    {
+        cout << wartosc << endl;;
+    }
+};
+
 int main()
 {
     Wektor w1(1,2,3), w2(4,5,6), w3(0,0,0);
@@ -77,6 +100,12 @@ int main()
 
     w3 = 2 * w3;
     w3.info();
+
+    Liczba l1(1), l2(0);
+    ++l1;
+    l2 = ++l1;
+    l1.info();
+    l2.info();
 
     return 0;
 }
