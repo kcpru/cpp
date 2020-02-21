@@ -59,12 +59,7 @@ public:
 
 ostream& operator<<(ostream &os, Czas c)
 {
-    if(c.m < 10)
-        cout << c.g << ":" << "0" << c.m << endl;
-    else if(c.m == 0)
-        cout << c.g << ":" << "00" << c.m << endl;
-    else
-        cout << c.g << ":"<< c.m << endl;
+    cout << c.g << ":" << (c.m < 10 ? "0" : "") << c.m << endl;
     return os;
 }
 
