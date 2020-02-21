@@ -37,8 +37,15 @@ public:
 
     Czas operator+(Czas c)
     {
-        Czas tmp(this->g + c.g, this->m + c.m);
-        return tmp;
+        c.zwiekszGodziny(c.g);
+        c.zwiekszMinuty(c.m);
+        return c;
+    }
+
+    Czas operator++()
+    {
+        (*this).zwiekszMinuty(1);
+        return *this;
     }
 
     void info()
@@ -48,43 +55,32 @@ public:
         else
             cout << g << ":" << m << endl;
     }
-
-    void edytor()
-    {
-        char co;
-        int oIle;
-
-        while(true)
-        {
-            cout << "Co chcesz zwiekszyc? (g/m) ";
-            cin >> co;
-            cout << "O ile? ";
-            cin >> oIle;
-            if(co == 'm')
-                zwiekszMinuty(oIle);
-            else if(co == 'g')
-                zwiekszGodziny(oIle);
-            else
-                break;
-
-            info();
-        }
-
-    }
 };
+
+ostream& operator<<(ostream &os, Czas c)
+{
+    if(c.m < 10)
+        cout << c.g << ":" << "0" << c.m << endl;
+    else if(c.m == 0)
+        cout << c.g << ":" << "00" << c.m << endl;
+    else
+        cout << c.g << ":"<< c.m << endl;
+    return os;
+}
 
 int main()
 {
-    Czas t1(0,0);
+    Czas t1(0,0), t2(1,9);
     t1.zwiekszGodziny(53);
     t1.zwiekszMinuty(3695);
     t1.info();
 
-
-    Czas t2(2,10);
     t1 = t1 + t2;
-    t1.info();
-    t1.edytor();
+
+    cout << t1 << t2;
+
+    ++t1;
+    cout << t1;
 
     return 0;
 }

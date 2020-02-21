@@ -89,7 +89,6 @@ int main()
     cout << w1 << w2 << w3;
     w1++; w2++; w3++; w4++;
 
-
     cout << endl;
     cout << w1 << w2 << w3 << w4;
 
