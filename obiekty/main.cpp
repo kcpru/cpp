@@ -36,10 +36,10 @@ public:
     int r;
     const int PI;
 
-    Kolo(int _r):r(_r), PI(3.14)
+    Kolo(int _r) : r(_r), PI(3.14)
     {
         // TYLKO TU MOZNA INICJALIZOWAC STALE
-        r=_r;
+        r = _r;
     }
 
     int pole()
@@ -47,7 +47,8 @@ public:
         return r * r * PI;
     }
 
-    int obwod(){
+    int obwod()
+    {
         return 2 * r * PI;
     }
 
