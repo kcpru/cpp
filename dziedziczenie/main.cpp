@@ -25,7 +25,7 @@ public:
 
     void info(void)
     {
-        cout << "Prostokat: a=" << a << " b=" << b << " pole=" << pole() << " obwod= " << obwod() << endl;;
+        cout << "Prostokat: a=" << a << " b=" << b << " pole=" << pole() << " obwod= " << obwod() << endl;
     }
 };
 
@@ -55,6 +55,60 @@ public:
     }
 };
 
+
+class Kolo
+{
+public:
+    int r;
+    const float PI = 3.14;
+
+    Kolo(int r)
+    {
+        this->r=r;
+    }
+
+    int pole(void)
+    {
+        return r * r * PI;
+    }
+
+    int obwod(void)
+    {
+        return 2 * PI * r;
+    }
+
+    void info(void)
+    {
+        cout << "Kolo: r=" << r << " pole=" << pole() << " obwod= " << obwod() << endl;
+    }
+};
+
+class Walec : public Kolo
+{
+public:
+    int h;
+
+    Walec(int r,int h): Kolo(r)
+    {
+        this->h=h;
+    }
+
+    int pole(void)
+    {
+        return Kolo::pole() * 2 + h * Kolo::pole();
+    }
+
+    int objetosc(void)
+    {
+        return Kolo::pole() * h;
+    }
+
+    void info(void)
+    {
+        cout << "Walec: r=" << r <<  " h=" << h<<  " pole=" << pole() << " objetosc= " << objetosc() <<endl;
+    }
+};
+
 int main()
 {
     Prostokat p(1,1);
@@ -63,6 +117,12 @@ int main()
 
     Prostopadloscian pr(1,2, 4);
     pr.info();
+
+    Kolo k(3);
+    k.info();
+
+    Walec w(3, 4);
+    w.info();
 
     return 0;
 }
