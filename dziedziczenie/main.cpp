@@ -25,7 +25,33 @@ public:
 
     void info(void)
     {
-        cout << "Prostokat: a=" << a << " b=" << b << " pole=" << pole() << " obwod= " << obwod() << endl;
+        cout << "Prostokat: a=" << a << " b=" << b << " pole=" << pole() << " obwod= " << obwod() << endl;;
+    }
+};
+
+class Prostopadloscian : public Prostokat
+{
+public:
+    int h;
+
+    Prostopadloscian(int a,int b,int h): Prostokat(a,b)
+    {
+        this->h=h;
+    }
+
+    int pole(void)
+    {
+        return Prostokat::pole() + obwod() * h;
+    }
+
+    int objetosc(void)
+    {
+        return Prostokat::pole() * h;
+    }
+
+    void info(void)
+    {
+        cout << "Prostopadloscian: a=" << a << " b=" << b << " h=" << h<<  " pole=" << pole() << " objetosc= " << objetosc() <<endl;
     }
 };
 
@@ -34,6 +60,9 @@ int main()
     Prostokat p(1,1);
     p.info();
 
+
+    Prostopadloscian pr(1,2, 4);
+    pr.info();
 
     return 0;
 }
