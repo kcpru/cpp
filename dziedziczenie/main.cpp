@@ -95,7 +95,7 @@ public:
 
     int pole(void)
     {
-        return Kolo::pole() * 2 + h * Kolo::pole();
+        return Kolo::pole() * 2 + h * Kolo::obwod();
     }
 
     int objetosc(void)
@@ -105,7 +105,7 @@ public:
 
     void info(void)
     {
-        cout << "Walec: r=" << r <<  " h=" << h<<  " pole=" << pole() << " objetosc= " << objetosc() <<endl;
+        cout << "Walec: r=" << r <<  " h=" << h <<  " pole=" << pole() << " objetosc= " << objetosc() <<endl;
     }
 };
 
