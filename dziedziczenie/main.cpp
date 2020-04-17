@@ -83,7 +83,7 @@ class Walec : public Kolo {
 public:
     int h;
 
-    Walec(int r,int h): Kolo(r) {
+    Walec(int r, int h): Kolo(r) {
         this->h=h;
     }
 
