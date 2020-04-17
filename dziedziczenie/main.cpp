@@ -55,56 +55,47 @@ public:
     }
 };
 
-
-class Kolo
-{
+// ------------------ //
+// ------ Ko³o ------ //
+class Kolo {
 public:
     int r;
     const float PI = 3.14;
 
-    Kolo(int r)
-    {
+    Kolo(int r) {
         this->r=r;
     }
 
-    int pole(void)
-    {
+    int pole(void) {
         return r * r * PI;
     }
 
-    int obwod(void)
-    {
+    int obwod(void) {
         return 2 * PI * r;
     }
 
-    void info(void)
-    {
+    void info(void) {
         cout << "Kolo: r=" << r << " pole=" << pole() << " obwod= " << obwod() << endl;
     }
 };
 
-class Walec : public Kolo
-{
+class Walec : public Kolo {
 public:
     int h;
 
-    Walec(int r,int h): Kolo(r)
-    {
+    Walec(int r,int h): Kolo(r) {
         this->h=h;
     }
 
-    int pole(void)
-    {
+    int pole(void) {
         return Kolo::pole() * 2 + h * Kolo::obwod();
     }
 
-    int objetosc(void)
-    {
+    int objetosc(void) {
         return Kolo::pole() * h;
     }
 
-    void info(void)
-    {
+    void info(void) {
         cout << "Walec: r=" << r <<  " h=" << h <<  " pole=" << pole() << " objetosc= " << objetosc() <<endl;
     }
 };
