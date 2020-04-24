@@ -27,5 +27,13 @@ int main()
     cout << suma(1,2) << endl;
     cout << suma(3,4,5) << endl;
     cout << suma("hop","siup") << endl;
+
+    int (*f)(int, int );
+
+    f=suma;
+
+    cout << f(2,3) << endl;
+
+
     return 0;
 }
