@@ -4,7 +4,7 @@ using namespace std;
 
 class Czas
 {
-private:
+protected:
     int g,m;
 public:
     Czas(void)
@@ -50,9 +50,13 @@ public:
     }
     void zwiekszGMS(int oIleG, int oIleM, int oIleS)
     {
-        zwiekszSek(oIleG);
+        zwiekszGodz(oIleG);
         zwiekszMin(oIleM);
         zwiekszSek(oIleS);
+    }
+    void info(void)
+    {
+        cout << g << ":"<<m<<":" <<s<< endl;
     }
 };
 
@@ -61,6 +65,10 @@ int main()
     Czas t1;
     t1.zwiekszGM(2, 75);
     t1.info();
+
+    CzasPlus cp1;
+    cp1.zwiekszGMS(2, 75, 75);
+    cp1.info();
 
 
     return 0;
