@@ -58,7 +58,7 @@ public:
     }
 };
 
-class Kon : public Zwierze {};
+class Kon : public Zwierze {}; // <= dziedziczy "Ko-ko", bo nie jest nadpisana
 
 int main()
 {
