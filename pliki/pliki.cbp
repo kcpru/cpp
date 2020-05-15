@@ -33,6 +33,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="plik.txt" />
 		<Extensions>
 			<code_completion />
 			<envvars />
