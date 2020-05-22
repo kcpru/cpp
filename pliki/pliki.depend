@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589528902 source:c:\users\kacper\desktop\cpp\pliki\main.cpp
+1589530070 source:c:\users\kacper\desktop\cpp\pliki\main.cpp
 	<iostream>
 	<fstream>
 	<string.h>
