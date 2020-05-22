@@ -9,7 +9,7 @@ public:
 
     Prostokat(int a, int _b)
     {
-        this->a = a; // ODNOSI SI� DO NAJBLI�SZEJ ZMIENNEJ
+        this->a = a; // ODNOSI SIE DO NAJBLIZSZEJ ZMIENNEJ
         b = _b;
     }
 
@@ -24,7 +24,6 @@ public:
 
     void info()
     {
-
         cout << "Prostokat: a=" << a << ", b=" << b << endl;
         cout << "Pole: " << pole() << endl;
     }
