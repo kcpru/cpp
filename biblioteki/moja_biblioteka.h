@@ -13,4 +13,14 @@ public:
     float suma(void);
 };
 
+class TrzyLiczby: public DwieLiczby
+{
+public:
+    float c;
+
+    TrzyLiczby(float):DwieLiczby();
+
+    float suma(void);
+};
+
 #endif // MOJA_BIBLIOTEKA_H_INCLUDED

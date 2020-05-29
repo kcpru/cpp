@@ -15,3 +15,13 @@ float DwieLiczby::suma(void)
 {
     return a + b;
 }
+
+TrzyLiczby::TrzyLiczby(float c):DwieLiczby(a, b)
+{
+    this->c = c;
+}
+
+float TrzyLiczby::suma(void)
+{
+    return a + b + c;
+}

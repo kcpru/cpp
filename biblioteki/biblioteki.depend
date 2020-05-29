@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1590737827 source:c:\users\kacper\desktop\cpp\biblioteki\main.cpp
+1590738178 source:c:\users\kacper\desktop\cpp\biblioteki\main.cpp
 	<iostream>
 	"moja_biblioteka.cpp"
 
-1590738134 c:\users\kacper\desktop\cpp\biblioteki\moja_biblioteka.cpp
+1590744745 c:\users\kacper\desktop\cpp\biblioteki\moja_biblioteka.cpp
 	"moja_biblioteka.h"
 
-1590737971 c:\users\kacper\desktop\cpp\biblioteki\moja_biblioteka.h
+1590738716 c:\users\kacper\desktop\cpp\biblioteki\moja_biblioteka.h
 
