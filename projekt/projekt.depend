@@ -1,7 +1,8 @@
 # depslib dependency file v1.0
-1590152876 source:c:\users\kacper\desktop\cpp\projekt\main.cpp
+1591048905 source:c:\users\kacper\desktop\cpp\projekt\main.cpp
 	<iostream>
 	<fstream>
 	<windows.h>
 	<conio.h>
+	<list>
 

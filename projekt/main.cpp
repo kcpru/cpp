@@ -2,6 +2,7 @@
 #include <fstream>
 #include <windows.h>
 #include <conio.h>
+#include <list>
 
 using namespace std;
 
@@ -38,56 +39,137 @@ public:
             n++;
         }
     }
+    void _wyswietl()
+    {
+        for(int i=0; i< n; i++)
+        {
+            cout << i << " - "
+                 << osoby[i].imie << " "
+                 << osoby[i].nazwisko << " " << " "
+                 << osoby[i].plec << " "
+                 << osoby[i].rokUr << " " << " "
+                 << osoby[i].miejscowosc << endl;
+        }
+    }
 
     void wyswietl()
     {
-        system("cls");
-        for(int i=0; i< n; i++)
-        {
-            cout << i << " " << osoby[i].imie << " " << osoby[i].nazwisko << " ";
-            cout  << " " << osoby[i].plec << " " << osoby[i].rokUr << " ";
-            cout  << " " << osoby[i].miejscowosc << endl;
-        }
+        _wyswietl();
+
         cout << "wcisnij dowolny klawisz zeby kontynuowac";
         getch();
     }
 
     void sortuj()
     {
-        cout << osoby[1].imie << endl;
-        getch();
+        int nr;
+        cout << "1 - imie\n2 - nazwisko\n3 - plec\n4 - rok urodzenia\n5 - miejscowosc\n" << endl;
+        cout << "Wybierz, po czym chcesz sortowac: ";
+        cin >> nr;
+
+        switch(nr)
+        {
+        case 1:
+            //
+            for (int i = 0; i < n-1; i++)
+                for (int j = 0; j < n-i-1; j++)
+                    if (osoby[j].imie[0] > osoby[j+1].imie[0])
+                        swap(osoby[j], osoby[j+1]);
+
+            //
+            break;
+        case 2:
+            //
+            for (int i = 0; i < n-1; i++)
+                for (int j = 0; j < n-i-1; j++)
+                    if (osoby[j].nazwisko[0] > osoby[j+1].nazwisko[0])
+                        swap(osoby[j], osoby[j+1]);
+            //
+            break;
+        case 3:
+            //
+            for (int i = 0; i < n-1; i++)
+                for (int j = 0; j < n-i-1; j++)
+                    if (osoby[j].plec > osoby[j+1].plec)
+                        swap(osoby[j], osoby[j+1]);
+            //
+            break;
+        case 4:
+            //
+            for (int i = 0; i < n-1; i++)
+                for (int j = 0; j < n-i-1; j++)
+                    if (osoby[j].rokUr > osoby[j+1].rokUr)
+                        swap(osoby[j], osoby[j+1]);
+            //
+            break;
+        case 5:
+            //
+            for (int i = 0; i < n-1; i++)
+                for (int j = 0; j < n-i-1; j++)
+                    if (osoby[j].miejscowosc[0] > osoby[j+1].miejscowosc[0])
+                        swap(osoby[j], osoby[j+1]);
+            //
+            break;
+        default:
+            ;
+
+        }
     }
 
     void dodajOsobe()
     {
-        osoba nowaOsoba;
-        cout << "Imie: ";
-        cin >> nowaOsoba.imie;
-        cout << "Nazwisko: ";
-        cin >> nowaOsoba.nazwisko;
-        cout << "Plec: ";
-        cin >> nowaOsoba.plec;
-        cout << "Rok urodzenia: ";
-        cin >> nowaOsoba.rokUr;
-        cout << "miejscowosc: ";
-        cin >> nowaOsoba.miejscowosc;
+        try
+        {
+            osoba nowaOsoba;
 
-        osoby[n] = nowaOsoba;
-        n++;
+            cout << "Imie: ";
+            cin >> nowaOsoba.imie;
+            cout << "Nazwisko: ";
+            cin >> nowaOsoba.nazwisko;
+            cout << "Plec: ";
+            cin >> nowaOsoba.plec;
+            cout << "Rok urodzenia: ";
+            cin >> nowaOsoba.rokUr;
+            cout << "miejscowosc: ";
+            cin >> nowaOsoba.miejscowosc;
+
+            osoby[n] = nowaOsoba;
+            n++;
+        }
+        catch(...)
+        {
+            cout<<"BLAD" << endl;
+            cin.clear();
+            getch();
+        }
     }
 
     void usunOsobe()
     {
-        for(int i=0; i< n; i++)
+        // Pusta tablica
+        if(!n)
         {
-            cout << i << " - " << osoby[i].imie << " " << osoby[i].nazwisko << " ";
-            cout  << " " << osoby[i].plec << " " << osoby[i].rokUr << " ";
-            cout  << " " << osoby[i].miejscowosc << endl;
+            cout << "Lista osob jest pusta." << endl;
+            getch();
+            return;
         }
+
+        _wyswietl();
+
         int id, it = 0;
         osoba no[nMax];
-        cout << "Ktora osobe chcesz usunac? ";
+
+        cout << "Wybierz numer osoby ktora chcesz usunac: ";
         cin >> id;
+
+        if(id > n - 1)
+        {
+            cout << endl << "Nie ma osoby z takim numerem.";
+            getch();
+
+            return;
+        }
+
         for(int i=0; i<n; i++)
         {
             if(id == i)
@@ -97,6 +179,7 @@ public:
             it++;
         }
         n--;
+
         for(int i=0; i<n; i++)
         {
             osoby[i] = no[i];
@@ -107,9 +190,15 @@ public:
     {
         fstream f;
         f.open(nazwaPliku, ios_base::out);
-        for(int i=0; i< n; i++)
+
+        for(int i=0; i<n; i++)
         {
-            f << osoby[i].imie << " " << osoby[i].nazwisko << " " << osoby[i].plec << " " << osoby[i].rokUr << " " << osoby[i].miejscowosc;
+            f << osoby[i].imie << " "
+              << osoby[i].nazwisko << " "
+              << osoby[i].plec << " "
+              << osoby[i].rokUr << " "
+              << osoby[i].miejscowosc;
+
             if(i < n - 1)
                 f << endl;
         }
@@ -128,6 +217,7 @@ public:
         cout << "5 - zapisz" << endl;
         cout << endl << "wybierz: ";
         cin >> i;
+        system("cls");
 
         switch(i)
         {
@@ -157,12 +247,9 @@ public:
 
 int main()
 {
-
     daneOsobowe dosob("plik.txt");
 
     while(dosob.menu()!=0);
-
-
 
     return 0;
 }
